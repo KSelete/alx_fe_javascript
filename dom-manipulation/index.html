@@ -1,1 +1,42 @@
-<div id="syncStatus" style="margin-top:10px; color: green;"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Quote Generator</title>
+</head>
+<body>
+  <h1>Dynamic Quote Generator</h1>
+
+  <!-- Quote display -->
+  <div id="quoteDisplay"></div>
+
+  <!-- Show new quote button -->
+  <button id="newQuote">Show New Quote</button>
+
+  <!-- Add new quote form -->
+  <div style="margin-top:10px;">
+    <input id="newQuoteText" type="text" placeholder="Enter a new quote" />
+    <input id="newQuoteCategory" type="text" placeholder="Enter quote category" />
+    <button onclick="addQuote()">Add Quote</button>
+  </div>
+
+  <!-- Import/Export JSON -->
+  <div style="margin-top:10px;">
+    <input type="file" id="importFile" accept=".json" onchange="importFromJsonFile(event)" />
+    <button onclick="exportToJsonFile()">Export Quotes as JSON</button>
+  </div>
+
+  <!-- Category filter -->
+  <div style="margin-top:10px;">
+    <select id="categoryFilter" onchange="filterQuotes()">
+      <option value="all">All Categories</option>
+    </select>
+  </div>
+
+  <!-- Server sync status -->
+  <div id="syncStatus" style="margin-top:10px; color: green;"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
